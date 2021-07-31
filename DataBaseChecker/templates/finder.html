@@ -23,10 +23,17 @@
             margin:auto;
             margin-top:8px;
         }
+        .menucontainer{
+            display:flex;
+            justify-content:space-between;
+        }
     </style>
 </head>
 <body>
-
+    <div class="menucontainer">
+        <div id="findsong">Find song info</div>
+        <div id="findartist">Find artist's songs</div>
+    </div>
     {% if res %}
         {% if res!= '404'%}
         <p> Song: {{res[0]}} <br>
@@ -47,4 +54,12 @@
     {% endif %}
 
 </body>
+<script>
+    findsong.addEventListener('click', function(){
+    window.location.href='/song'
+    })
+    findartist.addEventListener('click', function(){
+    window.location.href='/artist'
+    })
+</script>
 </html>

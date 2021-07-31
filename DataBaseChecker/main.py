@@ -27,7 +27,7 @@ def transmit_song(arg):
         return [name, composer, length,unitprice]
 
 def transmit_artist(arg):
-    if arg is None:
+    if arg == []:
         return '404'
     else:
         return arg
