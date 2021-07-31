@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Finder</title>
+    <style>
+        .inputfield{
+            display:flex;
+            justify-content:space-between;
+            width:30%;
+            height:30px;
+            margin:auto;
+        }
+        .inputfield>p{
+            margin:auto;
+        }
+        .inputfield>input{
+            width:40%;
+        }
+        .submit {
+            width:10%;
+            display:block;
+            margin:auto;
+            margin-top:8px;
+        }
+        .firstrow{
+            background-color:#888;
+        }
+        table{
+            margin:auto;
+        }
+    </style>
+</head>
+<body>
+
+    {% if res %}
+        {% if res!= '404'%}
+            <table>
+                <tr class="firstrow">
+                    <td>Song name</td>
+                    <td>Price</td>
+                </tr>
+            {% for artist in res %}
+                <tr>
+                    <td>{{artist[0]}}</td>
+                    <td>{{artist[1]}}$</td>
+                </tr>
+            {% endfor %}
+            </table>
+        {% else %}
+        <p>{{res}}</p>
+        {% endif %}
+    {% else %}
+    <form method = "post" action = "/artist">
+        <div class="inputfield">
+            <p>Input here the artist name</p>
+            <input type = "text" name = "name" placeholder="" >
+        </div>
+        <input type="submit" value="Find songs" name = "result" class="submit">
+    </form>
+    {% endif %}
+
+</body>
+</html>

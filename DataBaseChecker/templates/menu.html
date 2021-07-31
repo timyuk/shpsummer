@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .menucontainer{
+            display:flex;
+            justify-content:space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="menucontainer">
+        <div id="findsong">Find song info</div>
+        <div id="findartist">Find artist's songs</div>
+    </div>
+</body>
+<script>
+    findsong.addEventListener('click', function(){
+    window.location.href='/song'
+    })
+    findartist.addEventListener('click', function(){
+    window.location.href='/artist'
+    })
+</script>
+</html>
